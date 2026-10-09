@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MicroBlog - Simple Blog Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>✦</span> MicroBlog
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#create">Create</a>
+            <a href="#blogs">Blogs</a>
+        </div>
+
+        <button class="nav-button" onclick="scrollToCreate()">
+            + Create Blog
+        </button>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">WELCOME TO MICROBLOG</p>
+
+            <h1>
+                Share your
+                <span>thoughts.</span>
+            </h1>
+
+            <p class="hero-text">
+                Write, publish and share your ideas with a simple
+                and beautiful microblogging platform.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn" onclick="scrollToCreate()">
+                    Start Writing ✍
+                </button>
+
+                <button class="secondary-btn" onclick="scrollToBlogs()">
+                    Explore Blogs
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="hero-card">
+
+            <div class="card-top">
+                <span>● ● ●</span>
+            </div>
+
+            <div class="post-preview">
+
+                <div class="profile-circle">
+                    M
+                </div>
+
+                <div>
+                    <h3>My First Blog</h3>
+                    <p>Welcome to my new blogging journey...</p>
+                </div>
+
+            </div>
+
+            <div class="preview-lines">
+                <div></div>
+                <div></div>
+                <div class="short"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Statistics -->
+    <section class="stats">
+
+        <div class="stat-box">
+            <h2 id="totalBlogs">0</h2>
+            <p>Total Blogs</p>
+        </div>
+
+        <div class="stat-box">
+            <h2 id="totalLikes">0</h2>
+            <p>Total Likes</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>100%</h2>
+            <p>Simple & Free</p>
+        </div>
+
+    </section>
+
+
+    <!-- Create Blog Section -->
+    <section class="create-section" id="create">
+
+        <div class="section-heading">
+
+            <p>CREATE SOMETHING AMAZING</p>
+
+            <h2>Write a New Blog</h2>
+
+            <span>
+                Share your thoughts, experiences and ideas.
+            </span>
+
+        </div>
+
+
+        <div class="form-container">
+
+            <form id="blogForm">
+
+                <div class="input-group">
+
+                    <label for="author">
+                        Author Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="author"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="title">
+                        Blog Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="Enter your blog title"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <select id="category">
+
+                        <option value="Technology">
+                            Technology
+                        </option>
+
+                        <option value="Education">
+                            Education
+                        </option>
+
+                        <option value="Lifestyle">
+                            Lifestyle
+                        </option>
+
+                        <option value="Travel">
+                            Travel
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="content">
+                        Blog Content
+                    </label>
+
+                    <textarea
+                        id="content"
+                        rows="8"
+                        placeholder="Write your blog here..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="publish-btn"
+                >
+                    Publish Blog 🚀
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Blog Section -->
+    <section class="blogs-section" id="blogs">
+
+        <div class="section-heading">
+
+            <p>DISCOVER AMAZING CONTENT</p>
+
+            <h2>Latest Blogs</h2>
+
+            <span>
+                Read and explore posts from our community.
+            </span>
+
+        </div>
+
+
+        <!-- Search -->
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search blogs..."
+                onkeyup="searchBlogs()"
+            >
+
+        </div>
+
+
+        <!-- Blog Cards -->
+        <div
+            class="blog-grid"
+            id="blogContainer"
+        >
+        </div>
+
+
+        <!-- Empty Message -->
+        <div
+            id="emptyMessage"
+            class="empty-message"
+        >
+
+            <div class="empty-icon">
+                📝
+            </div>
+
+            <h3>No blogs yet</h3>
+
+            <p>
+                Be the first person to publish a blog!
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-logo">
+            ✦ MicroBlog
+        </div>
+
+        <p>
+            Simple blogging platform created using
+            HTML, CSS and JavaScript.
+        </p>
+
+        <p class="copyright">
+            © 2026 MicroBlog. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
